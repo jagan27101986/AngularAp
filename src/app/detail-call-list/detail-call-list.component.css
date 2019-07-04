@@ -1,0 +1,40 @@
+.container {
+  padding: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.form {
+ 
+  width: 100%;
+}
+
+.form-element {
+  padding: 5px 0px 10px 2px;
+  width: 100%;
+}
+
+.customer-button-row button,
+.customer-button-row a {
+  margin-right: 8px;
+   
+}
+
+.button {
+    width:100%;
+}
+
+.col
+{
+    float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

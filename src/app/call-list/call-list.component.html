@@ -1,0 +1,105 @@
+<!--
+<table>
+<tr>
+    <th>Name</th>
+    <th>Date Sold</th>
+    <th>Status</th>
+    
+</tr>
+    <tr *ngFor="let customer of customers" [routerLink] = "['/detailList', customer.id]">
+    <td>{{customer.title}}</td>
+    <td>{{customer.firstName}}</td>
+    </tr>
+</table>
+-->
+<h1>Call List</h1>
+
+<mat-card>
+<form [formGroup]="formGroup" class="form"> 
+<mat-form-field>
+  <mat-label>Call Type</mat-label>
+  <mat-select (change)="callTypeId($event)" formControlName="callTypeId">
+    <mat-option *ngFor="let callType of callTypes" [value]="callType.value">
+      {{callType.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+&nbsp;
+    &nbsp;
+ <mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Date Sold" formControlName="dateSold">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+    &nbsp;&nbsp;
+    <mat-form-field>
+  <input matInput [matDatepicker]="picker1" placeholder="To" formControlName="ToSold">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+    
+     &nbsp;&nbsp;
+    <mat-form-field>
+  <mat-label>Status</mat-label>
+  <mat-select (change)="callTypeId($event)" formControlName="customerStatus">
+    <mat-option *ngFor="let customerStatus of status" [value]="customerStatus.value">
+      {{customerStatus.viewValue}}
+    </mat-option>
+  </mat-select>
+       
+    </mat-form-field>
+      &nbsp;&nbsp;  &nbsp;&nbsp;
+     <button mat-raised-button color="primary" type="button" class="button"  (click)="searchData()" >Search</button>
+
+    </form>
+</mat-card>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+  
+      <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+      
+    <ng-container matColumnDef="title" >
+      <mat-header-cell *matHeaderCellDef  > Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.title}} {{element.surName}} {{element.firstName}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="dateSold">
+      <mat-header-cell *matHeaderCellDef > Date Sold </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dateSold}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="status" >
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.status}} </mat-cell>
+    </ng-container>
+
+   
+    <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+    <mat-row  *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+      
+  </mat-table>
+
+ <button [disabled]="isButtonEnable" mat-raised-button color="primary" (click)="selectedCustomerData()">Make Call</button>
+
+  

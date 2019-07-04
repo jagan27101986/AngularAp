@@ -1,0 +1,76 @@
+<h1>Call in Use </h1>
+<mat-toolbar color="primary">
+Customer Data
+</mat-toolbar> 
+
+  <mat-card>    
+<form [formGroup]="formGroup" class="form">
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="Title" formControlName="title">
+      <mat-error *ngIf="!formGroup.controls['title'].valid && formGroup.controls['title'].touched">
+       Title is Required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-element">
+      <input matInput placeholder="First Name" formControlName="firstName">
+      <mat-error *ngIf="!firstName.valid && firstName.touched">
+       First Name is Required
+      </mat-error>
+    </mat-form-field>
+
+      <mat-form-field class="form-element">
+      <input matInput placeholder="SurName" formControlName="surName">
+      <mat-error *ngIf="!surName.valid && surName.touched">
+      SurName is Required
+      </mat-error>
+    </mat-form-field>
+     
+    <div class="row">
+        <div class="col">
+      <mat-form-field class="form-element">
+      <input  type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" matInput placeholder="Mobile" formControlName="Mobile">
+      <mat-error *ngIf="!Mobile.valid && Mobile.touched">
+       Mobile Number is required
+      </mat-error>
+    </mat-form-field>
+        </div>
+          <div class="col">
+     <button mat-raised-button color="primary" type="button" (click)="callMobileNumber()">Call Mobile Number</button>    
+        </div>
+</div>
+     <div class="row">
+         <div class="col">
+      <mat-form-field class="form-element">
+      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" matInput placeholder="Home" formControlName="Home">
+      <mat-error *ngIf="!Home.valid && Home.touched">
+       Home Number is required
+      </mat-error>
+    </mat-form-field>
+             </div>
+    <div class="col">
+    <button mat-raised-button color="primary" type="button" (click)="callHomeNumber()">Call Home Number</button>  
+    </div>
+    </div>
+  <br/>
+   <div class="customer-button-row">
+  <button mat-raised-button color="primary" (click)="updateCustomer()">Update</button>
+  <button mat-raised-button color="accent" (click)="resetCustomer()">Reset</button>
+  
+</div>
+    
+     <br/>
+    
+       <div class="form-element">
+      
+     <button mat-raised-button color="primary" type="button" class="button"  (click)="completeCall()" >Call Completed</button>
+    </div>
+  
+
+ </form>
+      
+     
+      
+
+  </mat-card>

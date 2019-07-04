@@ -1,0 +1,92 @@
+{
+  "customerData": [
+    {
+      "title": "Mr",
+      "firstName": "Jagan",
+      "surName": "Kumar",
+      "Mobile": "001-222-2121",
+      "Home": "001-222-2131",
+      "dateSold": "20/06/2019",
+      "status": "COMPLETED",
+      "callType": "Service",
+      "id": 1
+    },
+    {
+      "title": "Miss",
+      "firstName": "Patricia",
+      "surName": "HugoKoma",
+      "Mobile": "002-222-2111",
+      "Home": "003-222-2111",
+      "dateSold": "21/06/2019",
+      "status": "IN USE",
+      "callType": "Service",
+      "id": 2
+    },
+    {
+      "title": "Mrs",
+      "firstName": "Hakuna",
+      "surName": "Matata",
+      "Mobile": "005-222-2111",
+      "Home": "004-222-2111",
+      "dateSold": "27/06/2019",
+      "status": "COMPLETED",
+      "callType": "Sales",
+      "id": 3
+    },
+    {
+      "title": "Mr",
+      "firstName": "Yaa",
+      "surName": "Jajaj",
+      "Mobile": "006-111-2111",
+      "Home": "007-111-2111",
+      "dateSold": "28/06/2019",
+      "status": "NEW",
+      "callType": "Sales",
+      "id": 4
+    },
+    {
+      "title": "Mr",
+      "firstName": "Hello",
+      "surName": "MaryJja",
+      "Mobile": "011-224-1121",
+      "Home": "001-222-2142",
+      "dateSold": "25/06/2019",
+      "status": "NEW",
+      "callType": "Sales",
+      "id": 5
+    },
+    {
+      "title": "Mr",
+      "firstName": "Jagan",
+      "surName": "Updated Data",
+      "Mobile": "011-224-1121",
+      "Home": "001-222-2142",
+      "dateSold": "25/06/2019",
+      "status": "COMPLETED",
+      "callType": "Service",
+      "id": 6
+    },
+    {
+      "title": "Miss",
+      "firstName": "Wesal",
+      "surName": "Arer",
+      "Mobile": "011-224-1121",
+      "Home": "001-222-2142",
+      "dateSold": "25/06/2019",
+      "status": "NEW",
+      "callType": "Sales",
+      "id": 7
+    },
+    {
+      "title": "Mr",
+      "firstName": "Facebook",
+      "surName": "Twitter",
+      "Mobile": "011-224-1121",
+      "Home": "001-222-2142",
+      "dateSold": "25/06/2019",
+      "status": "NEW",
+      "callType": "Sales",
+      "id": 8
+    }
+  ]
+}
